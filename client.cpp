@@ -13,6 +13,8 @@ Client::Client(QObject *parent) :
     sock_req_ = context_->createSocket(ZMQSocket::TYP_REQ, this);
     sock_sub_ = context_->createSocket(ZMQSocket::TYP_SUB, this);
 
+    sock_sub_->subscribeTo("");
+
     sock_req_->connectTo(REQ_ADDR);
     connect(sock_req_, SIGNAL(messageReceived(QList<QByteArray>)),
             SLOT(reply(QList<QByteArray>)));
