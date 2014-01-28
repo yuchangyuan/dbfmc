@@ -92,8 +92,8 @@ void Client::reply(QList<QByteArray> reply)
 void Client::received(QList<QByteArray> recv)
 {
     QTextStream cout(stdout);
-    cout << endl;
-    for (int i = 0; i < recv.size(); ++i) {
+    cout << QString(recv[0]) << " --> ";
+    for (int i = 1; i < recv.size(); ++i) {
         cout << QString(recv[i]) << endl;
     }
 }
