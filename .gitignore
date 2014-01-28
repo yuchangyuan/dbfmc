@@ -4,3 +4,5 @@
 *.swp
 *.a
 *.o
+/dbfmc
+moc_*.cpp
