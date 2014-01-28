@@ -15,4 +15,13 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    client.cpp
+
+HEADERS += include/nzmqt/nzmqt.hpp \
+    client.h
+
+INCLUDEPATH += include
+
+# please create a symbol link of libzmq.a
+LIBS += $$system(PWD)/libzmq.a
