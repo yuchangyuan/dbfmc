@@ -1,9 +1,9 @@
 # Intro
 
-A CLI client communicate with ``dbfmd``.
+A CLI client communicate with [dbfmd](https://github.com/yuchangyuan/dbfmd).
 
-**NOTE**
-Currently, ``dbfmc`` only support connect to local ``dbfmd``, which listen to 2 fixed port(12677 & 12678). Code modification is necessary for use ``dbfmc`` to connect to alternative ``dbfmd`` instance.
+**Note**
+Currently, ``dbfmc`` only support connect to local ``dbfmd``, which listen to 2 fixed port(12677 & 12678). Code modification is necessary for use ``dbfmc`` with alternative(non local or alternative port) ``dbfmd`` instance.
 
 # Usage
 * ``dbfmc info``: get the information of current track.
