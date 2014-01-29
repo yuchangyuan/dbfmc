@@ -18,20 +18,16 @@ int main(int argc, char *argv[])
     if ("info" == args[1]) {
         c->info();
     }
-
-    if ("skip" == args[1]) {
+    else if ("skip" == args[1]) {
         c->skip();
     }
-
-    if ("rate" == args[1]) {
+    else if ("rate" == args[1]) {
         c->rate();
     }
-
-    if ("trash" == args[1]) {
+    else if ("trash" == args[1]) {
         c->trash();
     }
-
-    if ("switch" == args[1]) {
+    else if ("switch" == args[1]) {
         if (args.size() < 3) {
             cerr << "Not enough argument, need channel id" << endl;
             return EXIT_FAILURE;
@@ -46,17 +42,18 @@ int main(int argc, char *argv[])
 
         c->switchChannel(ch_id);
     }
-
-    if ("monitor" == args[1]) {
+    else if ("monitor" == args[1]) {
         c->monitor();
     }
-
-    if ("play" == args[1]) {
+    else if ("play" == args[1]) {
         c->play();
     }
-
-    if ("pause" == args[1]) {
+    else if ("pause" == args[1]) {
         c->pause();
+    }
+    else {
+        cerr << "command error" << endl;
+        return EXIT_FAILURE;
     }
 
     return a.exec();
