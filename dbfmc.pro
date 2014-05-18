@@ -24,4 +24,4 @@ HEADERS += include/nzmqt/nzmqt.hpp \
 INCLUDEPATH += include
 
 # please create a symbol link of libzmq.a
-LIBS += $$system(PWD)/libzmq.a
+LIBS += $$system(pwd)/libzmq.a
