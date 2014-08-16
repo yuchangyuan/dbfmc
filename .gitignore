@@ -6,3 +6,4 @@
 *.o
 /dbfmc
 moc_*.cpp
+Makefile

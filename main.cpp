@@ -22,7 +22,16 @@ int main(int argc, char *argv[])
         c->skip();
     }
     else if ("rate" == args[1]) {
-        c->rate();
+        int like = -1;
+        if (args.size() > 2) {
+            if ("true" == args[2]) like = 1;
+            else if ("false" == args[2]) like = 0;
+            else {
+                cerr << "should only rate 'true' of 'false'" << endl;
+                return EXIT_FAILURE;
+            }
+        }
+        c->rate(like);
     }
     else if ("trash" == args[1]) {
         c->trash();

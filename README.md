@@ -8,7 +8,7 @@ Currently, ``dbfmc`` only support connect to local ``dbfmd``, which listen to 2 
 # Usage
 * ``dbfmc info``: get the information of current track.
 * ``dbfmc skip``: skip current track.
-* ``dbfmc rate``: rate/unrate current track.
+* ``dbfmc rate``: rate/unrate current track, with optional bool argument
 * ``dbfmc trash``: delete current track.
 * ``dbfmc switch`` *ch_id*: switch to channel with an id of *ch_id*, which is an integer.
 * ``dbfmc monitor``: monitor player status change, will not exit until hit *Ctrl-C*.

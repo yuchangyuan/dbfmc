@@ -15,13 +15,14 @@ class Client : public QObject
     static const char* SUB_ADDR;
     static const char* REQ_ADDR;
 
-    void request(QString req, int ch_id = -1);
+    void request(QString req, int arg1 = -1);
 
 public:
     explicit Client(QObject *parent = 0);
 
     void skip();
-    void rate();
+    // 1->like, 0->unlike, otherwise toggle
+    void rate(int like);
     void trash();
     void info();
     void switchChannel(int ch_id);

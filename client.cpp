@@ -27,9 +27,9 @@ void Client::skip()
     request("skip");
 }
 
-void Client::rate()
+void Client::rate(int like)
 {
-    request("rate");
+    request("rate", like);
 }
 
 void Client::trash()
@@ -57,7 +57,7 @@ void Client::pause()
     request("pause");
 }
 
-void Client::request(QString req, int ch_id)
+void Client::request(QString req, int arg1)
 {
     QList<QByteArray> msg;
 
@@ -65,8 +65,12 @@ void Client::request(QString req, int ch_id)
 
     if (req == "switch") {
         QString ch_id_str;
-        QTextStream(&ch_id_str) << ch_id;
+        QTextStream(&ch_id_str) << arg1;
         msg << ch_id_str.toUtf8();
+    }
+    else if (req == "rate") {
+        if (arg1 == 0) msg << QString("false").toUtf8();
+        if (arg1 == 1) msg << QString("true").toUtf8();
     }
 
     sock_req_->sendMessage(msg);
